@@ -1,14 +1,21 @@
 import subprocess
 import sys
+import streamlit as st
 
-# Automatically install plotly if it's not installed
+# Attempt to import plotly, and try to install it if missing
 try:
     import plotly.express as px
 except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
-    import plotly.express as px
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
+        import plotly.express as px  # Try importing again after installation
+    except subprocess.CalledProcessError as e:
+        st.error(
+            "Automatic installation of Plotly failed. "
+            "Please install it manually (e.g., add 'plotly' to your requirements.txt file)."
+        )
+        raise e
 
-import streamlit as st
 import pandas as pd
 
 # Set the page configuration
