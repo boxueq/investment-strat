@@ -1,4 +1,4 @@
-This simple web is a test using my 'Lur' Technique, inspired by Aristotles way of thinking.
+This simple web application is a test of my Lūr Technique, inspired by Aristotle’s method of thinking. It’s a framework I’ve developed that can be applied to any topic or subject, designed to help cultivate extraordinary capabilities.
 
 You have full permissions to use the contents provided below
 
